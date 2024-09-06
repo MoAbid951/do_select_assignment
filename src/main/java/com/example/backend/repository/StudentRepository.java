@@ -10,14 +10,14 @@ import java.util.List;
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
     
-    @Query("SELECT s FROM Student s")
+    @Query("Write Your query")
     List<Student> findAllStudents();
 
     
-    @Query("SELECT s FROM Student s WHERE s.id = :id")
+    @Query("Write Your query")
     Student findStudentById(@Param("id") Long id);
 
  
-    @Query("DELETE FROM Student s WHERE s.id = :id")
+    @Query("Write Your query")
     void deleteStudentById(@Param("id") Long id);
 }

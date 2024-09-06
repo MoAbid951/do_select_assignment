@@ -19,37 +19,26 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
-        return studentService.getAllStudents();
+       //Logic removed: Implement this method to fetch all students from database 
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable Long id) {
-        Optional<Student> student = studentService.getStudentById(id);
-        return student.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        //Logic removed: Implement this method to fetch student by id from database 
     }
 
     @PostMapping
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
-        Student savedStudent = studentService.saveStudent(student);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedStudent);
+        //Logic removed: Implement this method to save student in database 
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student student) {
-        if (!studentService.getStudentById(id).isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-        student.setId(id);
-        Student updatedStudent = studentService.saveStudent(student);
-        return ResponseEntity.ok(updatedStudent);
+        //Logic removed: Implement this method to update student in database 
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
-        if (!studentService.getStudentById(id).isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-        studentService.deleteStudent(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<Void> deleteStudentById(@PathVariable Long id) {
+       //Logic removed: Implement this method to delete student by id from database 
     }
 }
